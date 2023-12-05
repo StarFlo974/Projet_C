@@ -1,0 +1,30 @@
+# Première partie de Pierre Dupont et Allan Chiron.
+
+# Tree Search
+
+Tree Search est un ensemble de programmes en C conçus pour explorer une arborescence de dossiers et rechercher des fichiers spécifiques.
+
+## Contenu du projet
+
+Le projet est structuré comme suit :
+
+- `lib/`: Contient le code source et les fichiers d'en-tête pour la bibliothèque tree.
+- `treeload.c`: Le programme principal qui charge la configuration et effectue la recherche de fichiers en réponse à un signal SIGHUP.
+- `treesearch.c`: Un programme complémentaire qui envoie un fichier spécifié à treeload et déclenche un signal SIGHUP.
+- `tree.conf`: Fichier de configuration spécifiant les paramètres tels que `rootdir`, `datafile`, et `pidfile`.
+
+## Compilation
+
+Pour compiler le projet, exécutez la commande `make` à partir du répertoire principal. Assurez-vous d'avoir un compilateur C installé sur votre système.
+
+## Utilisation
+
+1. Assurez-vous que le fichier `tree.conf` est correctement configuré avec le chemin racine et les fichiers de données/pid.
+2. Exécutez `./treeload` dans un terminal pour démarrer le programme de recherche en arrière-plan.
+3. Pour rechercher un fichier spécifique, utilisez `./treesearch <nom_du_fichier>` dans un autre terminal.
+
+## Exemple
+
+```bash
+$ ./treeload
+$ ./treesearch fichier_a_rechercher.txt
